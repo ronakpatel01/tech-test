@@ -1,5 +1,6 @@
 ﻿using System;
 
+//Test GitHub Check-ins
 namespace AnyCompany
 {
     public class Customer
