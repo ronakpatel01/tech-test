@@ -11,10 +11,7 @@
             if (order.Amount == 0)
                 return false;
 
-            if (customer.Country == "UK")
-                order.VAT = 0.2d;
-            else
-                order.VAT = 0;
+            order.VAT = VatCalculation.VatRateForCustomer(customer);
 
             orderRepository.Save(order);
 
