@@ -4,8 +4,6 @@ namespace AnyCompany
 {
     internal class OrderRepository
     {
-        
-
         public void Save(Order order)
         {
             SqlConnection connection = new SqlConnection(ConnectionStrings.OrdersConnectionString);

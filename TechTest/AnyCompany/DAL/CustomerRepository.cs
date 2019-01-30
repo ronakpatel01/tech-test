@@ -5,8 +5,6 @@ namespace AnyCompany
 {
     public static class CustomerRepository
     {
-        
-
         public static Customer Load(int customerId)
         {
             Customer customer = new Customer();
