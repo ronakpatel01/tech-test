@@ -10,9 +10,13 @@ namespace AnyCompany
     {
         private readonly OrderRepository orderRepository = new OrderRepository();
 
-        public void SaveOrder(Order order)
+        public void SaveOrder(Order order, int customerId)
         {
-            orderRepository.Save(order);
+            orderRepository.Save(order, customerId);
+            
         }
+
+
+
     }
 }

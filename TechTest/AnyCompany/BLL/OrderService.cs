@@ -11,7 +11,7 @@
             bool updated = UpdateOrder(order, customer);
 
             if (updated)
-                orderActions.SaveOrder(order);
+                orderActions.SaveOrder(order, customerId);
 
             return updated;
         }

@@ -9,8 +9,8 @@ namespace AnyCompany.Tests1
         [TestMethod]
         public void TestOrderUpdateUK()
         {
-            Order order = MockedOrders.Order1();
-            Customer customer = MockedCustomer.Customer1();
+            Order order = MockedOrders.CreateNewOrder1();
+            Customer customer = MockedCustomer.CreateNewCustomer1();
 
             OrderService orderService = new OrderService();
 
@@ -21,8 +21,8 @@ namespace AnyCompany.Tests1
         [TestMethod]
         public void TestOrderUpdateFrance()
         {
-            Order order = MockedOrders.Order1();
-            Customer customer = MockedCustomer.Customer2();
+            Order order = MockedOrders.CreateNewOrder1();
+            Customer customer = MockedCustomer.CreateNewCustomer2();
 
             OrderService orderService = new OrderService();
 

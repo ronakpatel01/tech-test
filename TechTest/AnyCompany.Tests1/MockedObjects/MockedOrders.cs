@@ -8,7 +8,7 @@ namespace AnyCompany.Tests1
 {
     public static class MockedOrders
     {
-        public static Order Order1()
+        public static Order CreateNewOrder1()
         {
             return new Order()
             {

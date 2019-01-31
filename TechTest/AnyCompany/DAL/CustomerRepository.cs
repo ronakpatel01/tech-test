@@ -1,4 +1,5 @@
 ﻿  using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace AnyCompany
@@ -20,6 +21,7 @@ namespace AnyCompany
 
                     while (reader.Read())
                     {
+                        customer.CustomerId = reader.GetInt32(reader.GetOrdinal("CustomerId"));
                         customer.Name = reader["Name"].ToString();
                         customer.DateOfBirth = DateTime.Parse(reader["DateOfBirth"].ToString());
                         customer.Country = reader["Country"].ToString();
@@ -27,6 +29,34 @@ namespace AnyCompany
                 }
             }
             return customer;
+        }
+
+        public static Customer[] LoadAllCustomers()
+        {
+            List<Customer> customers = new List<Customer>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionStrings.CustomersConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM Customer", connection))
+                {
+                    var reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Customer customer = new Customer();
+
+                        customer.CustomerId = reader.GetInt32(reader.GetOrdinal("CustomerId"));
+                        customer.Name = reader["Name"].ToString();
+                        customer.DateOfBirth = DateTime.Parse(reader["DateOfBirth"].ToString());
+                        customer.Country = reader["Country"].ToString();
+
+                        customers.Add(customer);
+                    }
+                }
+            }
+            return customers.ToArray();
         }
     }
 }
