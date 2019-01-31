@@ -13,10 +13,12 @@ namespace AnyCompany
         public void SaveOrder(Order order, int customerId)
         {
             orderRepository.Save(order, customerId);
-            
         }
 
-
+        public Order[] GetOrdersForCustomer(int customerId)
+        {
+            return orderRepository.LoadOrdersForCustomer(customerId);
+        }
 
     }
 }

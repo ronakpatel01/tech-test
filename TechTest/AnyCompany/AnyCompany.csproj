@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CustomerService.cs" />
     <Compile Include="DAL\ConnectionStrings.cs" />
     <Compile Include="DTO\CustomerActions.cs" />
     <Compile Include="DTO\OrderActions.cs" />
